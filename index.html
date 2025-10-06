@@ -67,6 +67,20 @@
       border-width: 2px;
       z-index: 1000;
     }
+    .badge {
+      margin: 5px;
+      font-size: 0.95rem;
+      padding: 0.6em 0.9em;
+    }
+    .bg-secondary {
+      background-color: #2c2f33 !important;
+    }
+    .text-primary {
+      color: #00bcd4;
+    }
+    .shadow-sm {
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body>
@@ -132,22 +146,96 @@
 </div>
 
   <div class="container section">
-    <h2 class="mb-4">Technical Skills</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <p><strong>Languages & Frameworks:</strong> JavaScript, TypeScript, Node.js, Angular, Backbone.js, Ember.js, GraphQL</p>
-        <p><strong>Build Tools:</strong> Webpack, npm, Gulp, Grunt</p>
-        <p><strong>Version Control:</strong> Git, SVN</p>
-      </div>
-      <div class="col-md-6">
-        <p><strong>Cloud & DevOps:</strong> Azure, Jenkins, Docker, CI/CD</p>
-        <p><strong>Databases:</strong> MongoDB, MySQL, Redis, PostgreSQL</p>
-        <p><strong>Collaboration:</strong> Teams, Slack, Jira, Confluence, Zoom</p>
-        <p><strong>AI Tools:</strong> GitHub Copilot</p>
-        <p><strong>Certifications:</strong> AZ-900, AZ-102</p>
+  <h2 class="mb-4 text-primary">Technical Skills</h2>
+  <div class="row g-4">
+
+    <!-- Languages & Frameworks -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">🧠 Languages & Frameworks</h5>
+        <span class="badge bg-info text-dark">JavaScript</span>
+        <span class="badge bg-info text-dark">TypeScript</span>
+        <span class="badge bg-info text-dark">Node.js</span>
+        <span class="badge bg-info text-dark">Angular</span>
+        <span class="badge bg-info text-dark">Backbone.js</span>
+        <span class="badge bg-info text-dark">Ember.js</span>
+        <span class="badge bg-info text-dark">GraphQL</span>
       </div>
     </div>
+
+    <!-- Build Tools -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">🛠️ Build Tools</h5>
+        <span class="badge bg-warning text-dark">Webpack</span>
+        <span class="badge bg-warning text-dark">npm</span>
+        <span class="badge bg-warning text-dark">Gulp</span>
+        <span class="badge bg-warning text-dark">Grunt</span>
+      </div>
+    </div>
+
+    <!-- Version Control -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">📁 Version Control</h5>
+        <span class="badge bg-light text-dark">Git</span>
+        <span class="badge bg-light text-dark">SVN</span>
+      </div>
+    </div>
+
+    <!-- Cloud & DevOps -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">☁️ Cloud & DevOps</h5>
+        <span class="badge bg-success">Azure</span>
+        <span class="badge bg-success">Jenkins</span>
+        <span class="badge bg-success">Docker</span>
+        <span class="badge bg-success">CI/CD</span>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">🗄️ Databases</h5>
+        <span class="badge bg-danger">MongoDB</span>
+        <span class="badge bg-danger">MySQL</span>
+        <span class="badge bg-danger">Redis</span>
+        <span class="badge bg-danger">PostgreSQL</span>
+      </div>
+    </div>
+
+    <!-- Collaboration Tools -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">🤝 Collaboration</h5>
+        <span class="badge bg-primary">Teams</span>
+        <span class="badge bg-primary">Slack</span>
+        <span class="badge bg-primary">Jira</span>
+        <span class="badge bg-primary">Confluence</span>
+        <span class="badge bg-primary">Zoom</span>
+      </div>
+    </div>
+
+    <!-- AI Tools -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">🤖 AI Tools</h5>
+        <span class="badge bg-dark">GitHub Copilot</span>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="col-md-6">
+      <div class="bg-secondary text-light p-4 rounded shadow-sm">
+        <h5 class="fw-bold mb-3">🎓 Certifications</h5>
+        <span class="badge bg-secondary border border-light">AZ-900</span>
+        <span class="badge bg-secondary border border-light">AZ-102</span>
+      </div>
+    </div>
+
   </div>
+</div>
 
   <div class="container section">
     <h2 class="mb-4">Key Achievements</h2>

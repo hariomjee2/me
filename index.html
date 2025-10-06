@@ -49,7 +49,7 @@
       transition: all 0.4s ease-in-out;
     }
     
-    #profileImage {
+    .profile-img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
@@ -57,7 +57,6 @@
       border: 4px solid #0d6efd;
       transition: all 0.4s ease-in-out;
     }
-    
     .shrink {
       position: fixed;
       top: 20px;
@@ -66,7 +65,7 @@
       height: 80px !important;
       border-width: 2px;
       z-index: 1000;
-    }
+}
     .badge {
       margin: 5px;
       font-size: 0.95rem;
@@ -84,14 +83,36 @@
   </style>
 </head>
 <body>
-  <div class="container text-center section" id="heroSection">
-    <div id="imageContainer">
-      <img src="./profile2.jpg" alt="Hari Om Jee" class="profile-img mb-3" id="profileImage" />
+  <!-- Hero Section -->
+<div class="container section" id="heroSection">
+  <div class="row align-items-center">
+    <!-- Left: Text -->
+    <div class="col-md-8 text-light">
+      <h1 class="fw-bold display-5 mb-3">Hari Om Jee</h1>
+      <h4 class="text-info mb-3">Technical Lead | Full Stack JavaScript Expert</h4>
+      <p class="mb-2">📧 <a href="mailto:hariomjee2@gmail.com" class="text-decoration-none text-light">hariomjee2@gmail.com</a></p>
+      <p class="mb-4">📞 <a href="tel:+919595733892" class="text-decoration-none text-light">+91-9595733892</a></p>
+      <a href="#contact" class="btn btn-success fw-bold">Let's get started &gt;</a>
     </div>
-    <h1 class="fw-bold">Hari Om Jee</h1>
-    <p class="lead">Technical Lead | Full Stack JavaScript Expert</p>
-    <p>📧 hariomjee2@gmail.com | 📞 +91-9595733892</p>
+
+    <!-- Right: Profile Image -->
+    <div class="col-md-4 text-center">
+      <div id="imageContainer">
+        <img src="./profile2.jpg" alt="Hari Om Jee" class="profile-img" id="profileImage" />
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- Career Objective -->
+<div class="container section">
+  <h2 class="mb-4 text-primary">Career Objective</h2>
+  <div class="bg-secondary text-light p-4 rounded shadow-sm">
+    <p>
+      Passionate Technical Lead with 13+ years of experience architecting full-stack JavaScript solutions, leading high-performing teams, and delivering scalable products across cloud platforms. I thrive on solving complex challenges, mentoring developers, and driving innovation from concept to deployment. My goal is to contribute to transformative projects that push boundaries, elevate user experience, and build resilient systems for the future.
+    </p>
+  </div>
+</div>
 
   <div class="container section">
     <h2 class="mb-4">Career Objective</h2>
@@ -344,13 +365,13 @@
 
   window.addEventListener('scroll', () => {
     const triggerPoint = heroSection.offsetHeight / 2;
-
     if (window.scrollY > triggerPoint) {
       image.classList.add('shrink');
     } else {
       image.classList.remove('shrink');
     }
   });
+
 </script>
 
 </body>

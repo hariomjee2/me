@@ -44,11 +44,36 @@
       margin-bottom: 8px;
       font-size: 1rem;
     }
+    #imageContainer {
+      position: relative;
+      transition: all 0.4s ease-in-out;
+    }
+    
+    #profileImage {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0d6efd;
+      transition: all 0.4s ease-in-out;
+    }
+    
+    .shrink {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 80px !important;
+      height: 80px !important;
+      border-width: 2px;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
-  <div class="container text-center section">
-    <img src="./profile2.jpg" alt="Hari Om Jee" class="profile-img mb-3" />
+  <div class="container text-center section" id="heroSection">
+    <div id="imageContainer">
+      <img src="./profile2.jpg" alt="Hari Om Jee" class="profile-img mb-3" id="profileImage" />
+    </div>
     <h1 class="fw-bold">Hari Om Jee</h1>
     <p class="lead">Technical Lead | Full Stack JavaScript Expert</p>
     <p>📧 hariomjee2@gmail.com | 📞 +91-9595733892</p>
@@ -199,5 +224,20 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const image = document.getElementById('profileImage');
+  const heroSection = document.getElementById('heroSection');
+
+  window.addEventListener('scroll', () => {
+    const triggerPoint = heroSection.offsetHeight / 2;
+
+    if (window.scrollY > triggerPoint) {
+      image.classList.add('shrink');
+    } else {
+      image.classList.remove('shrink');
+    }
+  });
+</script>
+
 </body>
 </html>

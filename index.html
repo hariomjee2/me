@@ -1,386 +1,597 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hari Om Jee — Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hari Om Jee — Portfolio</title>
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <style>
-    :root {
-      --accent: #63b3ed;
-      --accent-2: #7c3aed;
-      --accent-3: #22d3ee;
-      --card-bg: rgba(13, 20, 35, 0.75);
-      --maxw: 1100px;
-    }
-    :root {
-    --bg-dark: #0b1220;
-    --bg-darker: #070d19;
-    --text: #eaf1ff;
-    --muted: #b7c4e0;
-    --card-bg: rgba(13, 20, 35, 0.75);
-    --header-bg: linear-gradient(180deg, rgba(7,13,25,0.9), rgba(7,13,25,0.4));
-    --header-border: rgba(255,255,255,0.08);
-
-    }
-
-    .light-theme {
-    --bg-dark: #f9f9f9;
-    --bg-darker: #ffffff;
-    --text: #1a1a1a;
-    --muted: #555;
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --header-bg: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,240,240,0.7));
-    --header-border: rgba(0,0,0,0.1);
-
-    }
-
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg-dark);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-
-    /* Header */
-    header {
-      position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    background: var(--header-bg);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--header-border);
-
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700; letter-spacing: 0.5px; font-size: 18px; }
-    .nav a { margin-left: 18px;
-        font-weight: 600;
-        color: var(--link-color);
+    <style>
+        :root {
+            --accent: #63b3ed;
+            --accent-2: #7c3aed;
+            --accent-3: #22d3ee;
+            --card-bg: rgba(13, 20, 35, 0.75);
+            --maxw: 1100px;
         }
-    .nav a:hover { color: var(--link-hover); }
 
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(1200px 400px at 10% 10%, rgba(124,58,237,0.25), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(34,211,238,0.2), transparent 70%),
-        linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
-    }
-    .hero::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: url("https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat fixed;
-      filter: brightness(0.35) saturate(1.1);
-    }
-    .hero::after {
-      content: "";
-      position: absolute; inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-      background-size: 24px 24px;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-    }
-    .hero-content { position: relative; z-index: 1; padding: 120px 24px 60px; }
-    .avatar {
-      width: 140px; height: 140px; border-radius: 999px; margin: 0 auto 16px;
-      /* border: 3px solid rgba(255,255,255,0.25);  */
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      /* Replace with your uploaded profile image path */
-      background: url("https://hariomjee2.github.io/me/profile2.jpg") center/cover no-repeat;
-    }
-    .title { font-family: "Space Grotesk", Inter, sans-serif; font-size: clamp(28px, 6vw, 48px); font-weight: 800; letter-spacing: 1px; }
-    .subtitle { color: var(--muted); max-width: 720px; margin: 10px auto 18px; font-size: 18px; line-height: 1.6; }
-    .cta {
-      display: inline-block; margin-top: 8px; padding: 12px 20px; border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: linear-gradient(90deg, rgba(124,58,237,0.3), rgba(34,211,238,0.3));
-      color: #fff; font-weight: 700; letter-spacing: 0.4px; box-shadow: 0 6px 20px rgba(124,58,237,0.35);
-    }
-    .cta:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        :root {
+            --bg-dark: #0b1220;
+            --bg-darker: #070d19;
+            --text: #eaf1ff;
+            --muted: #b7c4e0;
+            --card-bg: rgba(13, 20, 35, 0.75);
+            --header-bg: linear-gradient(180deg, rgba(7, 13, 25, 0.9), rgba(7, 13, 25, 0.4));
+            --header-border: rgba(255, 255, 255, 0.08);
 
-    /* Sections */
-    section { padding: 80px 0; position: relative; }
-    .section-title {
-      font-family: "Space Grotesk", Inter, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: 0.6px; margin: 0 0 24px;
-    }
-    .text-muted { color: var(--muted); }
+        }
 
-    .section-light { background: linear-gradient(180deg, #0f172a, #0b1220); }
-    .section-gradient { background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(34,211,238,0.08)); }
-    .section-parallax { background: linear-gradient(180deg, rgba(7,13,25,0.85), rgba(7,13,25,0.9)); }
-    .section-parallax::before {
-      content: ""; position: absolute; inset: 0;
-      background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat fixed;
-      filter: brightness(0.35); z-index: 0;
-    }
-    .section-parallax > .container { position: relative; z-index: 1; }
+        .light-theme {
+            --bg-dark: #f9f9f9;
+            --bg-darker: #ffffff;
+            --text: #1a1a1a;
+            --muted: #555;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --header-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.7));
+            --header-border: rgba(0, 0, 0, 0.1);
 
-    /* Cards and grids */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-    }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-
-    /* Timeline */
-    .timeline { position: relative; margin-left: 12px; padding-left: 18px; }
-    .timeline::before {
-      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.15); border-radius: 2px;
-    }
-    .item { margin: 0 0 20px 0; }
-    .item h4 { margin: 0 0 6px; font-weight: 700; }
-    .item .meta { color: var(--muted); margin-bottom: 6px; }
-
-    /* Footer */
-    footer {
-      padding: 28px 0; text-align: center; color: var(--muted);
-      background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    #theme-toggle {
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        color: var(--link-color);
-        margin-left: 16px;
-
-    }
+        }
 
 
-    @media (max-width: 640px) { .nav .links { display: none; } }
-  </style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-dark);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: var(--header-bg);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--header-border);
+
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .brand {
+            font-family: "Space Grotesk", Inter, sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-size: 18px;
+        }
+
+        .nav a {
+            margin-left: 18px;
+            font-weight: 600;
+            color: var(--link-color);
+        }
+
+        .nav a:hover {
+            color: var(--link-hover);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(1200px 400px at 10% 10%, rgba(124, 58, 237, 0.25), transparent 60%),
+                radial-gradient(900px 500px at 80% 20%, rgba(34, 211, 238, 0.2), transparent 70%),
+                linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat fixed;
+            filter: brightness(0.35) saturate(1.1);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 120px 24px 60px;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 999px;
+            margin: 0 auto 16px;
+            /* border: 3px solid rgba(255,255,255,0.25);  */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            /* Replace with your uploaded profile image path */
+            background: url("https://hariomjee2.github.io/me/profile2.jpg") center/cover no-repeat;
+        }
+
+        .title {
+            font-family: "Space Grotesk", Inter, sans-serif;
+            font-size: clamp(28px, 6vw, 48px);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            max-width: 720px;
+            margin: 10px auto 18px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(90deg, rgba(124, 58, 237, 0.3), rgba(34, 211, 238, 0.3));
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+        }
+
+        .cta:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: "Space Grotesk", Inter, sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            margin: 0 0 24px;
+        }
+
+        .text-muted {
+            color: var(--muted);
+        }
+
+        .section-light {
+            background: linear-gradient(180deg, #0f172a, #0b1220);
+        }
+
+        .section-gradient {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(34, 211, 238, 0.08));
+        }
+
+        .section-parallax {
+            background: linear-gradient(180deg, rgba(7, 13, 25, 0.85), rgba(7, 13, 25, 0.9));
+        }
+
+        .section-parallax::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop") center/cover no-repeat fixed;
+            filter: brightness(0.35);
+            z-index: 0;
+        }
+
+        .section-parallax>.container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Cards and grids */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin-left: 12px;
+            padding-left: 18px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 2px;
+        }
+
+        .item {
+            margin: 0 0 20px 0;
+        }
+
+        .item h4 {
+            margin: 0 0 6px;
+            font-weight: 700;
+        }
+
+        .item .meta {
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 28px 0;
+            text-align: center;
+            color: var(--muted);
+            background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        #theme-toggle {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--link-color);
+            margin-left: 16px;
+
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .summary-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary-card i {
+            font-size: 28px;
+            color: var(--accent-3);
+            margin-bottom: 12px;
+        }
+
+        .summary-card h3 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .summary-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+
+
+        @media (max-width: 640px) {
+            .nav .links {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- Header nav -->
-  <header role="banner" aria-label="Primary">
-    <div class="container nav">
-      <div class="brand">Hari Om Jee</div>
-      <nav class="links" aria-label="Site">
-        
-        <a href="#about">Objective</a>
-        <a href="#summary">Summary</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-      </nav>
-    </div>
-  </header>
+    <!-- Header nav -->
+    <header role="banner" aria-label="Primary">
+        <div class="container nav">
+            <div class="brand">Hari Om Jee</div>
+            <nav class="links" aria-label="Site">
 
-  <!-- Hero -->
-  <section class="hero" id="home" aria-label="Intro">
-    <div class="hero-content container">
-      <div class="avatar" aria-hidden="true"></div>
-      <h1 class="title">Hari Om Jee</h1>
-      <p class="subtitle">Technical Lead | Full Stack JavaScript Expert</p>
-      <p class="subtitle">
-        <a href="mailto:hariomjee2@gmail.com" style="color:#fff; font-weight:600;">📧 hariomjee2@gmail.com</a> •
-        <span style="color:#fff; font-weight:600;">📞 +91-9595733892</span>
-      </p>
-      <a class="cta" href="#projects">View my work</a>
-    </div>
-  </section>
-
-  <!-- Career Objective -->
-  <section class="section-light" id="about" aria-label="Career Objective">
-    <div class="container">
-      <div class="card">
-        <h2 class="section-title">Career objective</h2>
-        <p class="text-muted">
-          Passionate Technical Lead with 13+ years of experience architecting full-stack JavaScript solutions,
-          leading high-performing teams, and delivering scalable products across cloud platforms. I thrive on
-          solving complex challenges, mentoring developers, and driving innovation from concept to deployment.
-          My goal is to contribute to transformative projects that push boundaries, elevate user experience,
-          and build resilient systems for the future.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Professional Summary -->
-  <section class="section-gradient" id="summary" aria-label="Professional Summary">
-    <div class="container">
-      <h2 class="section-title">Professional summary</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Experience</h3>
-          <ul>
-            <li>✅ 13+ years in full-stack development</li>
-            <li>✅ 6+ years in Node.js & Angular</li>
-            <li>✅ Expert in JavaScript & TypeScript</li>
-          </ul>
+                <a href="#about">Objective</a>
+                <a href="#summary">Summary</a>
+                <a href="#skills">Skills</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </nav>
         </div>
-        <div class="card">
-          <h3>Core technologies</h3>
-          <ul>
-            <li>🧠 Node.js, Express.js, Angular</li>
-            <li>🗄️ MySQL, PostgreSQL, MongoDB, Redis</li>
-            <li>🔗 REST APIs, GraphQL, 3rd-party integrations</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Cloud & DevOps</h3>
-          <ul>
-            <li>☁️ AWS, Azure, Docker, Serverless</li>
-            <li>⚙️ CI/CD pipelines, Git, Agile</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Engineering practices</h3>
-          <ul>
-            <li>🔒 Web security best practices</li>
-            <li>🚀 Performance optimization</li>
-            <li>🧪 Unit testing & clean code</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Technical Skills -->
-  <section class="section-light" id="skills" aria-label="Technical Skills">
-    <div class="container">
-      <h2 class="section-title">Technical skills</h2>
-      <div class="grid">
-        <div class="card"><h3>Languages & frameworks</h3><p class="text-muted">JavaScript, TypeScript, Node.js, Angular, Backbone.js, Ember.js, GraphQL</p></div>
-        <div class="card"><h3>Build tools</h3><p class="text-muted">Webpack, npm, Gulp, Grunt</p></div>
-        <div class="card"><h3>Version control</h3><p class="text-muted">Git, SVN</p></div>
-        <div class="card"><h3>Cloud & DevOps</h3><p class="text-muted">Azure, Jenkins, Docker, CI/CD</p></div>
-        <div class="card"><h3>Databases</h3><p class="text-muted">MongoDB, MySQL, Redis, PostgreSQL</p></div>
-        <div class="card"><h3>Collaboration</h3><p class="text-muted">Teams, Slack, Jira, Confluence, Zoom</p></div>
-        <div class="card"><h3>AI tools</h3><p class="text-muted">GitHub Copilot</p></div>
-        <div class="card"><h3>Certifications</h3><p class="text-muted">AZ-900, AZ-102</p></div>
-      </div>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="Intro">
+        <div class="hero-content container">
+            <div class="avatar" aria-hidden="true"></div>
+            <h1 class="title">Hari Om Jee</h1>
+            <p class="subtitle">Technical Lead | Full Stack JavaScript Expert</p>
+            <p class="subtitle">
+                <a href="mailto:hariomjee2@gmail.com" style="color:#fff; font-weight:600;">📧 hariomjee2@gmail.com</a> •
+                <span style="color:#fff; font-weight:600;">📞 +91-9595733892</span>
+            </p>
+            <a class="cta" href="#projects">View my work</a>
+        </div>
+    </section>
 
-  <!-- Key Achievements -->
-  <section class="section-gradient" id="achievements" aria-label="Key Achievements">
-    <div class="container">
-      <h2 class="section-title">Key achievements</h2>
-      <ul class="text-muted">
-        <li>🔧 System Architecture: Migrated a monolithic app to microservices, improving scalability and deployment speed.</li>
-        <li>👥 Team Leadership: Led a team of 10+ developers to deliver a SaaS product adopted by 100K+ global users.</li>
-        <li>🏅 Recognition: Received multiple client and leadership awards for technical excellence and delivery success.</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Career Objective -->
+    <section class="section-light" id="about" aria-label="Career Objective">
+        <div class="container">
+            <div class="card">
+                <h2 class="section-title">Career objective</h2>
+                <p class="text-muted">
+                    Passionate Technical Lead with 13+ years of experience architecting full-stack JavaScript solutions,
+                    leading high-performing teams, and delivering scalable products across cloud platforms. I thrive on
+                    solving complex challenges, mentoring developers, and driving innovation from concept to deployment.
+                    My goal is to contribute to transformative projects that push boundaries, elevate user experience,
+                    and build resilient systems for the future.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Professional Experience (Parallax) -->
-  <section class="section-parallax" id="experience" aria-label="Professional Experience">
-    <div class="container">
-      <div class="card">
-        <h2 class="section-title">Professional experience</h2>
-        <div class="timeline">
-          <div class="item">
-            <h4>Application Lead</h4>
-            <div class="meta">Jan 2023 – Present</div>
+    <!-- Professional Summary -->
+    <!-- Professional Summary -->
+    <section class="section-gradient" id="summary" aria-label="Professional Summary">
+        <div class="container">
+            <h2 class="section-title">Professional Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>Experience</h3>
+                    <ul>
+                        <li>13+ years in full-stack development</li>
+                        <li>6+ years in Node.js & Angular</li>
+                        <li>Expert in JavaScript & TypeScript</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Core Technologies</h3>
+                    <ul>
+                        <li>Node.js, Express.js, Angular</li>
+                        <li>MySQL, PostgreSQL, MongoDB, Redis</li>
+                        <li>REST APIs, GraphQL, integrations</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS, Azure, Docker, Serverless</li>
+                        <li>CI/CD pipelines, Git, Agile</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Engineering Practices</h3>
+                    <ul>
+                        <li>Web security best practices</li>
+                        <li>Performance optimization</li>
+                        <li>Unit testing & clean code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section-light" id="skills" aria-label="Technical Skills">
+        <div class="container">
+            <h2 class="section-title">Technical skills</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Languages & frameworks</h3>
+                    <p class="text-muted">JavaScript, TypeScript, Node.js, Angular, Backbone.js, Ember.js, GraphQL</p>
+                </div>
+                <div class="card">
+                    <h3>Build tools</h3>
+                    <p class="text-muted">Webpack, npm, Gulp, Grunt</p>
+                </div>
+                <div class="card">
+                    <h3>Version control</h3>
+                    <p class="text-muted">Git, SVN</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud & DevOps</h3>
+                    <p class="text-muted">Azure, Jenkins, Docker, CI/CD</p>
+                </div>
+                <div class="card">
+                    <h3>Databases</h3>
+                    <p class="text-muted">MongoDB, MySQL, Redis, PostgreSQL</p>
+                </div>
+                <div class="card">
+                    <h3>Collaboration</h3>
+                    <p class="text-muted">Teams, Slack, Jira, Confluence, Zoom</p>
+                </div>
+                <div class="card">
+                    <h3>AI tools</h3>
+                    <p class="text-muted">GitHub Copilot</p>
+                </div>
+                <div class="card">
+                    <h3>Certifications</h3>
+                    <p class="text-muted">AZ-900, AZ-102</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Achievements -->
+    <section class="section-gradient" id="achievements" aria-label="Key Achievements">
+        <div class="container">
+            <h2 class="section-title">Key achievements</h2>
             <ul class="text-muted">
-              <li>🛠️ Architected unified installation platform</li>
-              <li>🔗 Integrated data from external systems</li>
-              <li>⚙️ Optimized backend queries and schemas</li>
-              <li>📱 Contributed to React Native mobile development</li>
+                <li>🔧 System Architecture: Migrated a monolithic app to microservices, improving scalability and
+                    deployment speed.</li>
+                <li>👥 Team Leadership: Led a team of 10+ developers to deliver a SaaS product adopted by 100K+ global
+                    users.</li>
+                <li>🏅 Recognition: Received multiple client and leadership awards for technical excellence and delivery
+                    success.</li>
             </ul>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Project Experience -->
-  <section class="section-light" id="projects" aria-label="Project Experience">
-    <div class="container">
-      <h2 class="section-title">Project experience</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>📦 MyInstall</h3>
-          <p class="text-muted">
-            <b>Client:</b> GE Healthcare<br/>
-            <b>Role:</b> Application Lead<br/>
-            <b>Tech:</b> GraphQL, Node.js, Angular, PostgreSQL, AWS, Docker
-          </p>
-          <p class="text-muted">Led backend development, data integration, and deployment workflows.</p>
+    <!-- Professional Experience (Parallax) -->
+    <section class="section-parallax" id="experience" aria-label="Professional Experience">
+        <div class="container">
+            <div class="card">
+                <h2 class="section-title">Professional experience</h2>
+                <div class="timeline">
+                    <div class="item">
+                        <h4>Application Lead</h4>
+                        <div class="meta">Jan 2023 – Present</div>
+                        <ul class="text-muted">
+                            <li>🛠️ Architected unified installation platform</li>
+                            <li>🔗 Integrated data from external systems</li>
+                            <li>⚙️ Optimized backend queries and schemas</li>
+                            <li>📱 Contributed to React Native mobile development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <h3>🧾 Orders & Invoices</h3>
-          <p class="text-muted">
-            <b>Client:</b> GE Healthcare<br/>
-            <b>Role:</b> Senior Backend Developer<br/>
-            <b>Tech:</b> Node.js, GraphQL, Solr, Bootstrap
-          </p>
-          <p class="text-muted">Built microservices and optimized invoice retrieval.</p>
+    </section>
+
+    <!-- Project Experience -->
+    <section class="section-light" id="projects" aria-label="Project Experience">
+        <div class="container">
+            <h2 class="section-title">Project experience</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>📦 MyInstall</h3>
+                    <p class="text-muted">
+                        <b>Client:</b> GE Healthcare<br />
+                        <b>Role:</b> Application Lead<br />
+                        <b>Tech:</b> GraphQL, Node.js, Angular, PostgreSQL, AWS, Docker
+                    </p>
+                    <p class="text-muted">Led backend development, data integration, and deployment workflows.</p>
+                </div>
+                <div class="card">
+                    <h3>🧾 Orders & Invoices</h3>
+                    <p class="text-muted">
+                        <b>Client:</b> GE Healthcare<br />
+                        <b>Role:</b> Senior Backend Developer<br />
+                        <b>Tech:</b> Node.js, GraphQL, Solr, Bootstrap
+                    </p>
+                    <p class="text-muted">Built microservices and optimized invoice retrieval.</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Education -->
-  <section class="section-gradient" id="education" aria-label="Education">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <ul class="text-muted">
-        <li>🎓 B.E. (Computer Science) — Rajarshi Shahu College of Engineering, Pune University</li>
-        <li>🎓 C-DAC — IACSD, Pune University</li>
-        <li>🏫 XII (CBSE) — Saint Joseph's School, Kahalgaon</li>
-        <li>🏫 X (ICSE) — Saint Joseph's School, NTPC</li>
-      </ul>
-    </div>
-  </section>
+    <!-- Education -->
+    <section class="section-gradient" id="education" aria-label="Education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <ul class="text-muted">
+                <li>🎓 B.E. (Computer Science) — Rajarshi Shahu College of Engineering, Pune University</li>
+                <li>🎓 C-DAC — IACSD, Pune University</li>
+                <li>🏫 XII (CBSE) — Saint Joseph's School, Kahalgaon</li>
+                <li>🏫 X (ICSE) — Saint Joseph's School, NTPC</li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer aria-label="Footer">
-    <div class="container">
-      © <span id="y"></span> Hari Om Jee • <a href="mailto:hariomjee2@gmail.com">Contact</a>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer aria-label="Footer">
+        <div class="container">
+            © <span id="y"></span> Hari Om Jee • <a href="mailto:hariomjee2@gmail.com">Contact</a>
+        </div>
+    </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
 
-    //Theming code
-    const toggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
+        //Theming code
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
 
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'light') {
-        body.classList.add('light-theme');
-        toggleBtn.textContent = '🌞';
-    }
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            toggleBtn.textContent = '🌞';
+        }
 
-    toggleBtn.addEventListener('click', () => {
-        body.classList.toggle('light-theme');
-        const isLight = body.classList.contains('light-theme');
-        toggleBtn.textContent = isLight ? '🌞' : '🌙';
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    });
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            const isLight = body.classList.contains('light-theme');
+            toggleBtn.textContent = isLight ? '🌞' : '🌙';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
 
-  </script>
+    </script>
 </body>
+
 </html>

@@ -12,16 +12,34 @@
 
   <style>
     :root {
-      --bg-dark: #0b1220;
-      --bg-darker: #070d19;
-      --text: #eaf1ff;
-      --muted: #b7c4e0;
       --accent: #63b3ed;
       --accent-2: #7c3aed;
       --accent-3: #22d3ee;
       --card-bg: rgba(13, 20, 35, 0.75);
       --maxw: 1100px;
     }
+    :root {
+    --bg-dark: #0b1220;
+    --bg-darker: #070d19;
+    --text: #eaf1ff;
+    --muted: #b7c4e0;
+    --card-bg: rgba(13, 20, 35, 0.75);
+    --header-bg: linear-gradient(180deg, rgba(7,13,25,0.9), rgba(7,13,25,0.4));
+    --header-border: rgba(255,255,255,0.08);
+
+    }
+
+    .light-theme {
+    --bg-dark: #f9f9f9;
+    --bg-darker: #ffffff;
+    --text: #1a1a1a;
+    --muted: #555;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --header-bg: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,240,240,0.7));
+    --header-border: rgba(0,0,0,0.1);
+
+    }
+
 
     html, body {
       margin: 0;
@@ -39,15 +57,21 @@
 
     /* Header */
     header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-      background: linear-gradient(180deg, rgba(7,13,25,0.9), rgba(7,13,25,0.4));
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    background: var(--header-bg);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--header-border);
+
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .brand { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 700; letter-spacing: 0.5px; font-size: 18px; }
-    .nav a { margin-left: 18px; font-weight: 600; color: var(--muted); }
-    .nav a:hover { color: var(--text); }
+    .nav a { margin-left: 18px;
+        font-weight: 600;
+        color: var(--link-color);
+        }
+    .nav a:hover { color: var(--link-hover); }
 
     /* Hero */
     .hero {
@@ -136,6 +160,16 @@
       background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
       border-top: 1px solid rgba(255,255,255,0.08);
     }
+    #theme-toggle {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: var(--link-color);
+        margin-left: 16px;
+
+    }
+
 
     @media (max-width: 640px) { .nav .links { display: none; } }
   </style>
@@ -147,6 +181,7 @@
     <div class="container nav">
       <div class="brand">Hari Om Jee</div>
       <nav class="links" aria-label="Site">
+        
         <a href="#about">Objective</a>
         <a href="#summary">Summary</a>
         <a href="#skills">Skills</a>
@@ -154,6 +189,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
       </nav>
     </div>
   </header>
@@ -327,6 +363,24 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    //Theming code
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-theme');
+        toggleBtn.textContent = '🌞';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        const isLight = body.classList.contains('light-theme');
+        toggleBtn.textContent = isLight ? '🌞' : '🌙';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
   </script>
 </body>
 </html>
